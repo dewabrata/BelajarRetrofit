@@ -12,6 +12,7 @@ package com.juara.belajarretrofit.service;
 
 
 import com.juara.belajarretrofit.model.WeatherModel;
+import com.juara.belajarretrofit.modelforcast.ForcastWeatherModel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -28,6 +29,9 @@ import retrofit2.http.Query;
 
     @GET("weather")
     Call<WeatherModel> getWeatherBasedLocation(@Query("lat") Double lat,@Query("lon") Double lon, @Query("appid") String appid);
+
+    @GET("forecast")
+    Call<ForcastWeatherModel> getForecastBasedLocation(@Query("lat") Double lat, @Query("lon") Double lon, @Query("appid") String appid);
 
 /*
     @GET("users")
